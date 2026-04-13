@@ -46,24 +46,6 @@ public class CustomEntityIntArray {
     return data.length;
   }
 
-  @Override
-  public String toString() {
-    return "CustomArray: " + Arrays.toString(data);
-  }
-
-  @Override
-  public int hashCode() {
-    return Arrays.hashCode(data);
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || this.getClass() != o.getClass()) return false;
-    CustomEntityIntArray that = (CustomEntityIntArray) o;
-    return Arrays.equals(data, that.data);
-  }
-
   public int[] getData() {
     return data.clone();
   }
@@ -96,5 +78,23 @@ public class CustomEntityIntArray {
     }
 
     this.data = data.clone();
+  }
+
+  @Override
+  public int hashCode() {
+    return Arrays.hashCode(data);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || this.getClass() != o.getClass()) return false;
+    CustomEntityIntArray that = (CustomEntityIntArray) o;
+    return Arrays.equals(data, that.data);
+  }
+
+  @Override
+  public String toString() {
+    return "CustomArray: " + Arrays.toString(data);
   }
 }
